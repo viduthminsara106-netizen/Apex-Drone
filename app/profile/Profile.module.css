@@ -1,0 +1,269 @@
+.profileContainer {
+  padding: 1.5rem;
+}
+
+.headerCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-small);
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.headerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.userInfo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-main);
+}
+
+.userInfo p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.vipBadge {
+  margin-left: auto;
+  background: #fff8eb;
+  color: #fb8c00;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.statsCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.icon {
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.statItem span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.statItem strong {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.sectionTitle h4 {
+  font-weight: 700;
+}
+
+.txList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.txCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.txType {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.txType h4 {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.txType small {
+  color: var(--text-secondary);
+}
+
+.txAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.txAmount strong {
+  font-size: 1.05rem;
+}
+
+.positive {
+  color: #2e7d32;
+}
+
+.negative {
+  color: #d32f2f;
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.statusBadge.pending {
+  background: #fff8eb;
+  color: #ef6c00;
+}
+.statusBadge.approved {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.statusBadge.rejected {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.noData {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem;
+}
+
+.telegramCard {
+  background: #e3f2fd;
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: transform 0.2s;
+}
+
+.telegramCard:active {
+  transform: scale(0.98);
+}
+
+.telegramIconWrap {
+  width: 44px;
+  height: 44px;
+  background: #24A1DE;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.telegramText h4 {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.telegramText p {
+  font-size: 0.8rem;
+  color: #1565c0;
+  opacity: 0.8;
+}
+
+.bankCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+}
+
+.bankCard h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.bankDetail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.bankDetail:last-child {
+  margin-bottom: 0;
+}
+
+.bankDetail span {
+  color: var(--text-secondary);
+}
+
+.bankDetail strong {
+  color: var(--text-main);
+}
+
+.actions {
+  margin-bottom: 2rem;
+}

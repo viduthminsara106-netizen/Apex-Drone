@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://viduth:SLviduth12345%40@cluster0.cwoheoc.mongodb.net/?appName=Cluster0"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  mobile       String        @unique
+  password     String
+  balance      Float         @default(0.0)
+  vipLevel     Int           @default(0)
+  bankName     String?
+  bankHolder   String?
+  bankAccount  String?
+  referrerId   String?
+  referrer     User?         @relation("UserReferrals", fields: [referrerId], references: [id])
+  referrals    User[]        @relation("UserReferrals")
+  role         String        @default("USER") // ADMIN or USER
+  banned       Boolean       @default(false)
+  transactions Transaction[]
+  notifications Notification[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  type        String   // DEPOSIT, WITHDRAW, PROFIT, COMMISSION, UPGRADE
+  amount      Float
+  status      String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  receiptUrl  String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  type      String   // DEPOSIT, WITHDRAW, COMMISSION
+  createdAt DateTime @default(now())
+}
