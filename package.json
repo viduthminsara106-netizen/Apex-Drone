@@ -12,7 +12,7 @@
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "lucide-react": "^0.300.0",
+    "lucide-react": "^0.450.0",
     "framer-motion": "^11.0.0",
     "@prisma/client": "^6.0.0",
     "bcryptjs": "^2.4.3",
