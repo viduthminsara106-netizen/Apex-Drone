@@ -29,10 +29,14 @@ export default async function AdminDashboard() {
     }
   })
 
-  const users = usersRaw.map(u => ({
-    ...u,
-    totalCommissions: u.transactions.filter((t: any) => t.type === 'COMMISSION').reduce((acc, t) => acc + t.amount, 0)
-  }))
+const users = usersRaw.map((u: any) => ({
+  ...u,
+  totalCommissions: u.transactions
+    ? u.transactions
+        .filter((t: any) => t.type === 'COMMISSION')
+        .reduce((acc: number, t: any) => acc + (t.amount || 0), 0)
+    : 0
+}));
 
   // Fetch all deposits
   const allDeposits = await prisma.transaction.findMany({
